@@ -1,0 +1,124 @@
+@use "../../partials/colors" as *;
+@use "../../partials/breakpoints" as *;
+
+
+.header {
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            position: relative;
+        }
+
+    }
+
+    &__searchContainer {
+        display: flex;
+
+    }
+
+    &__logo {
+        max-width: 100%;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        @include tablet {
+            padding-right: 7rem;
+            height: 4rem;
+        }
+
+        @include desktop {
+            padding-right: 30rem;
+        }
+
+    }
+
+    &__avatar {
+        height: 2.25rem;
+        width: 2.25rem;
+        border-radius: 50%;
+
+        @include tablet {
+            position: absolute;
+            right: 30px;
+            top: 22px;
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+
+        @include desktop {
+            right: 150px;
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+    }
+
+
+    &__search {
+        border: 1px solid $mercury;
+        background-image: url(../../assets/Icons/search.svg);
+        background-repeat: no-repeat;
+        background-position: left 10px top 10px;
+        border-radius: 4px;
+        width: 75vw;
+        height: 2.25rem;
+        padding-left: 2.5rem;
+        margin-right: .5rem;
+
+        @include tablet {
+            height: 3rem;
+            width: 30vw;
+            margin-right: 1.5rem;
+            background-position: left 10px top 15px;
+        }
+
+        @include desktop {
+            width: 18vw;
+            height: 2.75rem;
+        }
+
+
+    }
+
+    &__btn {
+        background-color: $blue;
+        height: 3rem;
+        width: 90vw;
+        border-radius: 4px;
+        color: $white;
+        margin: 1rem 0;
+        text-transform: uppercase;
+        border: 0;
+        font-size: .75rem;
+        line-height: 1.25rem;
+        font-weight: 700;
+        text-align: left;
+
+        @include tablet {
+            width: 20vw;
+            margin-right: 3rem;
+        }
+
+        @include desktop {
+            width: 12vw;
+            height: 2.75rem;
+            margin-right: 6rem;
+        }
+
+    }
+
+    &__btn--icon {
+        padding-right: 5rem;
+        padding-left: 0.25rem;
+        margin-top: 0.5rem;
+
+
+    }
+
+
+}
