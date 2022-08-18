@@ -1,4 +1,4 @@
-import './Hero.scss';
+import "./Hero.scss";
 
 function Hero (props) {
     const video = props.video;

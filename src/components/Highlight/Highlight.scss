@@ -1,0 +1,118 @@
+@use "../../partials/colors" as *;
+@use "../../partials/breakpoints" as *;
+
+.highlight {
+
+    @include desktop {
+        padding-left: 6rem;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 700;
+        padding: 1rem 0 1rem 1rem;
+
+        @include tablet {
+            padding-left: 2rem;
+            padding-bottom: .5rem;
+        }
+    }
+
+    &__wrapper {
+        border-top: 1px solid $mercury;
+        border-bottom: 1px solid $mercury;
+        padding: 1rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        display: flex;
+        color: $mercury;
+
+        @include tablet {
+            border-top: none;
+
+        }
+    }
+
+    &__wrap1 {
+        display: flex;
+        flex-direction: column;
+
+
+        @include tablet {
+            flex-direction: row;
+            padding-right: 16rem;
+
+        }
+
+    }
+
+    &__wrap2 {
+        display: flex;
+        flex-direction: column;
+        padding-left: 3rem;
+
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+
+    &__author {
+        color: $black;
+        padding-bottom: .75rem;
+
+        @include tablet {
+            padding-right: 2rem;
+        }
+
+    }
+
+    &__views {
+        padding-bottom: 1rem;
+
+        @include tablet {
+            padding-right: 2rem;
+        }
+    }
+
+    &__views-icon {
+        padding-right: .5rem;
+    }
+
+
+    &__description {
+        font-size: .8125rem;
+        line-height: 1.125rem;
+        font-weight: 400;
+        padding: 1.5rem 1rem;
+        color: $black;
+
+
+        @include tablet {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        @include desktop {
+            padding-right: 8rem;
+        }
+
+    }
+
+    &__comment-title {
+        font-weight: 700;
+        font-size: .8125rem;
+        line-height: 1.125rem;
+        padding-top: 1rem;
+
+        @include tablet {
+            padding-top: 2rem;
+        }
+
+        @include desktop {
+            padding-top: 3rem;
+        }
+
+
+    }
+}
