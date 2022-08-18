@@ -1,0 +1,74 @@
+@use "../../partials/colors" as *;
+@use "../../partials/breakpoints" as *;
+
+.form {
+
+    display: flex;
+    justify-content: space-between;
+
+    &__avatar {
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        margin: 1.5rem 0 0 1rem;
+
+        @include tablet {
+            margin-left: 2rem;
+        }
+
+    }
+
+    &__field {
+        padding-left: 1rem;
+
+        @include tablet {
+            display: flex;
+        }
+    }
+
+    &__label {
+        text-transform: uppercase;
+        color: $mercury;
+    }
+
+    &__comment {
+        height: 7rem;
+        width: 90%;
+        border-radius: .25rem;
+        padding: .75rem;
+        font-size: 1rem;
+        margin-top: .5rem;
+        margin-bottom: 1rem;
+        border: 1px solid $mercury;
+        resize: none;
+
+        @include tablet {
+            height: 3rem;
+            width: 60vw;
+        }
+
+
+    }
+
+    &__btn {
+        height: 2.25rem;
+        width: 90%;
+        background-color: $blue;
+        color: $white;
+        border-radius: 4px;
+        border: 0;
+        margin-bottom: 2rem;
+
+        @include tablet {
+            width: 30vw;
+            height: 3rem;
+            margin-top: 1.65rem;
+            margin-right: 3rem;
+
+
+        }
+
+    }
+
+
+}
