@@ -1,0 +1,20 @@
+@use "../../partials/colors" as *;
+@use "../../partials/breakpoints" as *;
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    &__avatar {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: $mercury;
+    }
+
+
+
+
+
+}
