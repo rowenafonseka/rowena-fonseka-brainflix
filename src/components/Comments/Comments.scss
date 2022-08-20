@@ -2,19 +2,51 @@
 @use "../../partials/breakpoints" as *;
 
 .comments {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
+    
+    &__wrapper{
+        display: flex;
+        border-top: 1px solid $mercury;
+        margin-left: 1rem;
+        margin-right: 1rem;
+
+        @include tablet{
+            margin-left: 1.5rem;
+            margin-right: 0;
+        }
+       
+    }
 
     &__avatar {
         width: 2rem;
         height: 2rem;
         border-radius: 50%;
         background-color: $mercury;
+        padding-left: 2rem;
+        margin-top: 1rem;
+
     }
 
+    &__top{
+        display: flex;
+        justify-content: space-between;
+        padding: .5rem 0 .5rem .5rem;
 
+        &--date{
+            color: $mercury;
+        }
 
+        &--name{
+            font-weight: 700;
+        }
+     
+    }
 
+    &__paragraph{
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding: 0 .5rem 1rem 1rem;
+    }
+
+   
 
 }

@@ -1,0 +1,19 @@
+@use "../../partials/breakpoints" as *;
+
+.main{
+
+    @include desktop{
+        display: flex;
+       
+    }
+   
+&__comments{
+    @include desktop{
+    margin-left: 5rem;
+    }
+    
+ }
+
+ 
+
+}

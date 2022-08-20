@@ -1,0 +1,20 @@
+@use "./partials/fonts";
+@use "./partials/colors";
+@use "./partials/breakpoints";
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+
+}
+
+html,
+body {
+    font-family: 'AvenirNextLTPro', sans-serif;
+    max-width: 100%;
+}

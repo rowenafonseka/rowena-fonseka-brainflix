@@ -6,6 +6,7 @@
     width: 100vw;
 
     @include tablet {
+        
         padding-left: 2rem;
         padding-right: 2rem;
         background-color: $darkBlack;

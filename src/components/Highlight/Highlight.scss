@@ -3,6 +3,9 @@
 
 .highlight {
 
+    margin-left: 1rem;
+    margin-right: 1rem;
+
     @include desktop {
         padding-left: 6rem;
     }
@@ -11,10 +14,13 @@
         font-size: 1.5rem;
         line-height: 2rem;
         font-weight: 700;
-        padding: 1rem 0 1rem 1rem;
+        padding: 1rem 0 1rem 0;
 
         @include tablet {
-            padding-left: 2rem;
+            font-size: 2.0625rem;
+            line-height: 2.75rem;
+            font-weight: 700;
+            padding-left: 1rem;
             padding-bottom: .5rem;
         }
     }
@@ -22,14 +28,20 @@
     &__wrapper {
         border-top: 1px solid $mercury;
         border-bottom: 1px solid $mercury;
-        padding: 1rem;
-        margin-left: 1rem;
-        margin-right: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
         display: flex;
+        justify-content: space-between;
         color: $mercury;
+        font-size: .8125rem;
+        font-weight: 400;
+        line-height: 1.125rem;
 
         @include tablet {
             border-top: none;
+            font-size: .875rem;
+            line-height: 1.375rem;
+            
 
         }
     }
@@ -40,43 +52,46 @@
 
 
         @include tablet {
-            flex-direction: row;
-            padding-right: 16rem;
+            flex-direction: column;
+            padding-left: 0.5rem;
 
         }
 
+        &--bold{
+            font-weight: 700;
+            font-size: .8125rem;
+            line-height: 1.125rem;
+            color: $black;
+            padding-bottom: .75rem;
+            
+            @include tablet{
+                font-size: .875rem;
+                line-height: 1.375rem;
+            }
+        }
     }
 
     &__wrap2 {
-        display: flex;
-        flex-direction: column;
-        padding-left: 3rem;
+       
+        font-size: .8125rem;
+        font-weight: 400;
+        line-height: 1.125rem;
+        padding-right: 1rem;
+        padding-bottom: .20rem;
+
+    }
+
+    &__wrap3 {
+       
+        font-size: .8125rem;
+        font-weight: 400;
+        line-height: 1.125rem;
+        padding-right: 1rem;
 
         @include tablet {
             flex-direction: row;
         }
-    }
 
-    &__author {
-        color: $black;
-        padding-bottom: .75rem;
-
-        @include tablet {
-            padding-right: 2rem;
-        }
-
-    }
-
-    &__views {
-        padding-bottom: 1rem;
-
-        @include tablet {
-            padding-right: 2rem;
-        }
-    }
-
-    &__views-icon {
-        padding-right: .5rem;
     }
 
 
@@ -84,12 +99,13 @@
         font-size: .8125rem;
         line-height: 1.125rem;
         font-weight: 400;
-        padding: 1.5rem 1rem;
+        padding-top: 1.5rem;
+        padding-right: 1rem;
         color: $black;
 
 
         @include tablet {
-            padding-left: 2rem;
+            padding-left: 1rem;
             padding-right: 2rem;
         }
 
@@ -99,11 +115,12 @@
 
     }
 
-    &__comment-title {
+    &__comment {
         font-weight: 700;
         font-size: .8125rem;
         line-height: 1.125rem;
         padding-top: 1rem;
+        padding-bottom: 1rem;
 
         @include tablet {
             padding-top: 2rem;

@@ -1,6 +1,46 @@
-.videolist__img {
-    width: 10rem;
-    height: 10rem;
+@use "../../partials/colors" as*;
+@use "../../partials/breakpoints" as*;
 
+.videolist{
+    border-top: 1px solid $mercury;
+    margin-left: 1rem;
+
+    &__title{
+        color: $mercury;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: .8125rem;
+        line-height: 1.125rem;
+        padding: 1rem 0 1rem 1rem;
+    }
+
+    &__container{
+        display: flex;
+        margin-left: 1rem;
+        margin-right: 1rem;
+
+        @include tablet{
+            padding-right: 33rem;
+        
+        }
+    }
+
+    &__img{
+        width: 8rem;
+        height: 5rem;
+        border-radius: 4px;
+        margin-right: 1rem;
+        margin-bottom: .5rem;
+        
+
+    }
+
+    &__detail--bold{
+        font-weight: 700;
+        padding-bottom: .3rem;
+
+       
+
+    }
 
 }
