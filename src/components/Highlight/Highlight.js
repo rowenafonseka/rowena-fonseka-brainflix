@@ -12,17 +12,31 @@ function Highlight({ title, channel, timestamp, views, likes, description }) {
           <span className="highlight__wrap1 highlight__wrap1--bold">
             By {channel}
           </span>
-          <span className="highlight__wrap1 highlight__wrap1">{timestamp}</span>
+          <span className="highlight__wrap1 highlight__wrap1">
+            {new Date(timestamp).toLocaleDateString("en-US", {
+              month: "2-digit",
+              day: "2-digit",
+              year: "numeric",
+            })}
+          </span>
         </div>
 
         <div className="highlight__wrappersub">
           <div className="highlight__wrap2">
-            <img src={Views} alt="views icon"></img>
+            <img
+              className="highlight__wrap2 highlight__wrap2--icon"
+              src={Views}
+              alt="views icon"
+            ></img>
             <span>{views}</span>
           </div>
 
           <div className="highlight__wrap3">
-            <img src={Likes} alt="likes icon"></img>
+            <img
+              className="highlight__wrap3 highlight__wrap3--icon"
+              src={Likes}
+              alt="likes icon"
+            ></img>
             <span>{likes}</span>
           </div>
         </div>

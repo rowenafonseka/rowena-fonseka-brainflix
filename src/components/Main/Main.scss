@@ -4,16 +4,8 @@
 
     @include desktop{
         display: flex;
+        justify-content: center;
        
     }
-   
-&__comments{
-    @include desktop{
-    margin-left: 5rem;
-    }
-    
- }
-
- 
 
 }

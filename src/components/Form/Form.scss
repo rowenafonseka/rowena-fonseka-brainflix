@@ -6,6 +6,10 @@
     display: flex;
     justify-content: space-between;
 
+    @include desktop{
+       padding-left: 6rem;
+    }
+
     &__avatar {
         width: 2.25rem;
         height: 2.25rem;
@@ -13,6 +17,8 @@
         margin: 1.5rem 0 0 1rem;
 
         @include tablet {
+            width: 2.5rem;
+            height: 2.5rem;
             margin-left: 2rem;
         }
 
@@ -29,6 +35,13 @@
     &__label {
         text-transform: uppercase;
         color: $mercury;
+        font-size: .75rem;
+        line-height: 1.25rem;
+        font-weight: 700;
+
+        @include desktop{
+            padding-left: 1rem;
+        }
     }
 
     &__comment {
@@ -47,27 +60,49 @@
             width: 60vw;
         }
 
+        @include desktop{
+            width: 35vw;
+            margin-left: 1rem;
+            
+        }
+    }
 
+    &__comment::placeholder{
+        font-family: AvenirNextLTPro;
+        color: $black;
     }
 
     &__btn {
-        height: 2.25rem;
+        height: 2.55rem;
         width: 90%;
         background-color: $blue;
         color: $white;
+        font-family: AvenirNextLTPro;
+        font-size: .8125rem;
+        text-transform: uppercase;
         border-radius: 4px;
         border: 0;
         margin-bottom: 2rem;
+        
+       
 
         @include tablet {
             width: 30vw;
             height: 3rem;
             margin-top: 1.65rem;
             margin-right: 3rem;
-
-
         }
 
+        @include desktop{
+            width: 15vw;
+            margin-right: 1.5rem;
+        }
+
+    }
+
+    &__btn--icon{
+      margin-left: -7rem;
+      margin-top: .5rem;
     }
 
 

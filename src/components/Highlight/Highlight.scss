@@ -39,10 +39,21 @@
 
         @include tablet {
             border-top: none;
+            margin-left: 1rem;
             font-size: .875rem;
             line-height: 1.375rem;
-            
+        }
 
+        
+    }
+
+    &__wrappersub{
+        @include tablet{
+            display: flex;
+        }
+
+        @include desktop{
+            padding-right: 0rem;
         }
     }
 
@@ -53,7 +64,11 @@
 
         @include tablet {
             flex-direction: column;
-            padding-left: 0.5rem;
+            
+        }
+
+        @include desktop{
+            flex-direction: row;
 
         }
 
@@ -68,6 +83,10 @@
                 font-size: .875rem;
                 line-height: 1.375rem;
             }
+
+            @include desktop{
+                padding-right: 2rem;
+            }
         }
     }
 
@@ -78,6 +97,10 @@
         line-height: 1.125rem;
         padding-right: 1rem;
         padding-bottom: .20rem;
+
+        @include tablet{
+            font-size: .875rem;
+        }
 
     }
 
@@ -90,6 +113,7 @@
 
         @include tablet {
             flex-direction: row;
+            font-size: .875rem;
         }
 
     }
@@ -105,12 +129,14 @@
 
 
         @include tablet {
+            font-size: .875rem;
+            line-height: 1.375rem;
             padding-left: 1rem;
             padding-right: 2rem;
         }
 
         @include desktop {
-            padding-right: 8rem;
+            padding-right: 0rem;
         }
 
     }
@@ -119,11 +145,13 @@
         font-weight: 700;
         font-size: .8125rem;
         line-height: 1.125rem;
+        color: $black;
         padding-top: 1rem;
         padding-bottom: 1rem;
 
         @include tablet {
             padding-top: 2rem;
+            font-size: .875rem;
         }
 
         @include desktop {
