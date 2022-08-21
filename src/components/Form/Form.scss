@@ -76,6 +76,9 @@
         height: 2.55rem;
         width: 90%;
         background-color: $blue;
+        background-image: url(../../assets/Icons/add_comment.svg);
+        background-repeat: no-repeat;
+        background-position: left 10px top 10px;
         color: $white;
         font-family: AvenirNextLTPro;
         font-size: .8125rem;
@@ -91,6 +94,7 @@
             height: 3rem;
             margin-top: 1.65rem;
             margin-right: 3rem;
+            background-position: left 10px top 13px;
         }
 
         @include desktop{
