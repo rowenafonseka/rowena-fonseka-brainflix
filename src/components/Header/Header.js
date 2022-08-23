@@ -22,7 +22,9 @@ function Header() {
           <img className="header__avatar" src={Mohan} alt="avatar" />
         </div>
 
-        <button className="header__btn">Upload</button>
+        <a href="/UploadVideo" className="header__btn">
+          Upload
+        </a>
       </nav>
     </header>
   );
