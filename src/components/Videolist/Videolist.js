@@ -1,4 +1,5 @@
 import "./Videolist.scss";
+import { Link } from "react-router-dom";
 
 function Videolist({ vids, selectedVideoId, changeVideo }) {
   // const videos = props.vids;
@@ -17,13 +18,36 @@ function Videolist({ vids, selectedVideoId, changeVideo }) {
 
       {filteredVideos.map((video) => (
         <div
-          onClick={() => {
-            changeVideo(video.id);
-          }}
+          // onClick={() => {
+          //   changeVideo(video.id);
+          // }}
           key={video.id}
           className="videolist__container"
         >
           <div>
+            {/* <img
+              className="videolist__img"
+              src={video.image}
+              alt="next video"
+            ></img> */}
+          </div>
+          <div className="videolist__detail">
+            <p className="videolist__detail videolist__detail--bold">
+              <Link to={`/vids/${video.id}`}>{video.title}</Link>
+            </p>
+            <p>
+              <Link to={`/vids/${video.id}`}>{video.channel}</Link>
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default Videolist;
+
+/* <div>
             <img
               className="videolist__img"
               src={video.image}
@@ -38,8 +62,4 @@ function Videolist({ vids, selectedVideoId, changeVideo }) {
           </div>
         </div>
       ))}
-    </div>
-  );
-}
-
-export default Videolist;
+    </div> */

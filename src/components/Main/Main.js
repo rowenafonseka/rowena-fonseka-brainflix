@@ -4,47 +4,85 @@ import Highlight from "../../components/Highlight/Highlight";
 import Form from "../../components/Form/Form";
 import Comments from "../../components/Comments/Comments";
 import Videolist from "../../components/Videolist/Videolist";
-import video from "../../data/video-details.json";
-import videos from "../..//data/videos.json";
-import { useState } from "react";
+// import video from "../../data/video-details.json";
+// import videos from "../..//data/videos.json";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+
+const apiKey = "?api_key=5a04ffac-5fc2-484b-83fa-d32a0464db90";
+const apiUrl = "https://project-2-api.herokuapp.com/videos";
 
 function Main() {
-  const [selectedVideo, setSelectedVideo] = useState(video[0]);
+  const { id } = useParams();
 
-  const changeVideo = (id) => {
-    const foundVideo = video.find((video) => {
-      if (video.id === id) {
-        return true;
-      }
-    });
+  const [videos, setVideos] = useState([]);
+  const [selectedVideo, setSelectedVideo] = useState();
 
-    setSelectedVideo(foundVideo);
-  };
+  useEffect(() => {
+    axios
+      .get(apiUrl + apiKey)
+      .then((response) => {
+        console.log(response.data);
+        setVideos(response.data);
+
+        let videoId;
+
+        if (id) {
+          videoId = id;
+        } else {
+          videoId = response.data[0].id;
+        }
+
+        return axios.get(apiUrl + "/" + videoId + apiKey);
+      })
+      .then((response) => {
+        setSelectedVideo(response.data);
+      });
+  }, [id]);
+
+  if (videos.length === 0) {
+    return <p>Loading...</p>;
+  }
+
+  // const changeVideo = (id) => {
+  //   const foundVideo = video.find((video) => {
+  //     if (video.id === id) {
+  //       return true;
+  //     }
+  //   });
+
+  //   setSelectedVideo(foundVideo);
+  // };
 
   return (
     <>
-      <Hero image={selectedVideo.image} />
+      {selectedVideo && <Hero selectedVideo={selectedVideo} />}
       <div className="main">
         <div className="main__content">
-          <Highlight
-            title={selectedVideo.title}
-            channel={selectedVideo.channel}
-            timestamp={selectedVideo.timestamp}
-            views={selectedVideo.views}
-            likes={selectedVideo.likes}
-            description={selectedVideo.description}
-          />
+          {selectedVideo && (
+            <Highlight
+              selectedVideo={selectedVideo}
+              // title={selectedVideo.title}
+              // channel={selectedVideo.channel}
+              // timestamp={selectedVideo.timestamp}
+              // views={selectedVideo.views}
+              // likes={selectedVideo.likes}
+              // description={selectedVideo.description}
+            />
+          )}
           <div className="main__comments">
             <Form />
-            <Comments comments={selectedVideo.comments} />
+            {selectedVideo && <Comments selectedVideo={selectedVideo} />}
+            {/* // comments={selectedVideo.comments} /> */}
           </div>
         </div>
         <div className="main__videos">
           <Videolist
-            changeVideo={changeVideo}
+            // changeVideo={changeVideo}
             vids={videos}
-            selectedVideoId={selectedVideo.id}
           />
+          {/* selectedVideoId={selectedVideo.id} */}
         </div>
       </div>
     </>
