@@ -17,15 +17,14 @@ function Main() {
   const { id } = useParams();
 
   const [videos, setVideos] = useState([]);
-  const [selectedVideo, setSelectedVideo] = useState();
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
   useEffect(() => {
     axios
       .get(apiUrl + apiKey)
       .then((response) => {
-        console.log(response.data);
         setVideos(response.data);
-
+        console.log(response.data);
         let videoId;
 
         if (id) {
@@ -41,8 +40,9 @@ function Main() {
       });
   }, [id]);
 
-  if (videos.length === 0) {
+  if (videos.length === 0 || selectedVideo === null) {
     return <p>Loading...</p>;
+    // change this to stop before selected video is avail
   }
 
   // const changeVideo = (id) => {
@@ -55,33 +55,36 @@ function Main() {
   //   setSelectedVideo(foundVideo);
   // };
 
+  // return <Videolist videos={videos} />;
+
   return (
     <>
-      {selectedVideo && <Hero selectedVideo={selectedVideo} />}
+      <Hero image={selectedVideo.image} />
       <div className="main">
         <div className="main__content">
           {selectedVideo && (
             <Highlight
               selectedVideo={selectedVideo}
-              // title={selectedVideo.title}
-              // channel={selectedVideo.channel}
-              // timestamp={selectedVideo.timestamp}
-              // views={selectedVideo.views}
-              // likes={selectedVideo.likes}
-              // description={selectedVideo.description}
+              title={selectedVideo.title}
+              channel={selectedVideo.channel}
+              timestamp={selectedVideo.timestamp}
+              views={selectedVideo.views}
+              likes={selectedVideo.likes}
+              description={selectedVideo.description}
             />
           )}
           <div className="main__comments">
             <Form />
-            {selectedVideo && <Comments selectedVideo={selectedVideo} />}
-            {/* // comments={selectedVideo.comments} /> */}
+            {selectedVideo && (
+              <Comments
+                selectedVideo={selectedVideo}
+                comments={selectedVideo.comments}
+              />
+            )}
           </div>
         </div>
         <div className="main__videos">
-          <Videolist
-            // changeVideo={changeVideo}
-            vids={videos}
-          />
+          <Videolist selectedVideo={selectedVideo} videos={videos} />
           {/* selectedVideoId={selectedVideo.id} */}
         </div>
       </div>
