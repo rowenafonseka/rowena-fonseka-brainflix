@@ -1,7 +1,18 @@
 import "./UploadVideo.scss";
 import Thumbnail from "../../assets/Images/Upload-video-preview.jpg";
 
+// Toastify
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+// notify function
+
 function UploadVideo() {
+  // video published notification
+  const notify = () => {
+    toast("Your video was published!");
+  };
+
   return (
     <div className="Upload">
       <h1 className="Upload__header">Upload Video</h1>
@@ -20,7 +31,7 @@ function UploadVideo() {
             <div className="Form__title">
               <label
                 className="Form__title Form__title--grey"
-                for="title-input"
+                htmlFor="title-input"
               >
                 Title Your Video
               </label>
@@ -34,7 +45,7 @@ function UploadVideo() {
             <div className="Form__description">
               <label
                 className="Form__description Form__description--grey"
-                for="description-input"
+                htmlFor="description-input"
               >
                 Add a Video Description
               </label>
@@ -44,7 +55,15 @@ function UploadVideo() {
                 placeholder="Add a description to your video"
               ></textarea>
               <div className="Form__buttons">
-                <input className="Form__btn" type="submit" value="publish" />
+                <button
+                  onClick={notify}
+                  className="Form__btn"
+                  type="submit"
+                  value="submit"
+                >
+                  Publish
+                </button>
+                <ToastContainer />
                 <a className="Form__cancel" href="/">
                   cancel
                 </a>

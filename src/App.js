@@ -15,12 +15,6 @@ function App() {
         <Route path="/UploadVideo" element={<UploadVideo />} />
       </Routes>
     </BrowserRouter>
-
-    // <div className="App">
-    //   <Header />
-    //   <Main />
-    //   <Upload />
-    // </div>
   );
 }
 

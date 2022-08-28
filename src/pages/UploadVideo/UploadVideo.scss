@@ -52,6 +52,7 @@
 
         @include desktop{
             padding-left: 8rem;
+            
         }
     }
 
@@ -82,7 +83,7 @@
     .Form{
 
         @include desktop{
-            padding-top: 1.75rem;
+            padding-top: 3.1rem;
         }
 
         &__title{
@@ -118,6 +119,8 @@
 
                 @include desktop{
                     margin-bottom: 1rem;
+                    width: 48rem;
+                
                 }
             }
 
@@ -188,7 +191,7 @@
 
             @include desktop{
                 margin-left: -23.5rem;
-                margin-right: -34rem;
+                
 
             }
         }
@@ -208,7 +211,7 @@
             line-height: 1.25rem;
             font-weight: 700;
             text-align: center;
-            background-image: url(../../assets/Icons/upload.svg);
+            background-image: url(../../assets/Icons/publish.svg);
             background-repeat: no-repeat;
             background-position: left 10px top 10px;
 
@@ -221,6 +224,11 @@
                 font-weight: 400;
             }
      }
+
+     &__btn:hover {
+        background-color: $darkBlue;
+    }
+
 
         &__cancel{
             text-transform: uppercase;
