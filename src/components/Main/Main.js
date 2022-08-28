@@ -60,7 +60,7 @@ function Main() {
   return (
     <>
       <Hero image={selectedVideo.image} />
-      <div className="main">
+      <main className="main">
         <div className="main__content">
           {selectedVideo && (
             <Highlight
@@ -87,7 +87,7 @@ function Main() {
           <Videolist selectedVideo={selectedVideo} videos={videos} />
           {/* selectedVideoId={selectedVideo.id} */}
         </div>
-      </div>
+      </main>
     </>
   );
 }

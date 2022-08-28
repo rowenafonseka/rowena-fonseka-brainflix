@@ -8,11 +8,11 @@ function Highlight({ title, channel, timestamp, views, likes, description }) {
       <h1 className="highlight__title">{title}</h1>
 
       <div className="highlight__wrapper">
-        <div className="highlight__wrap1">
-          <span className="highlight__wrap1 highlight__wrap1--bold">
+        <div className="highlight__wrap-author">
+          <span className="highlight__wrap-author highlight__wrap-author--bold">
             By {channel}
           </span>
-          <span className="highlight__wrap1 highlight__wrap1">
+          <span className="highlight__wrap-author highlight__wrap-author">
             {new Date(timestamp).toLocaleDateString("en-US", {
               month: "2-digit",
               day: "2-digit",
@@ -22,18 +22,18 @@ function Highlight({ title, channel, timestamp, views, likes, description }) {
         </div>
 
         <div className="highlight__wrappersub">
-          <div className="highlight__wrap2">
+          <div className="highlight__wrap-social">
             <img
-              className="highlight__wrap2 highlight__wrap2--icon"
+              className="highlight__wrap-social highlight__wrap-social--icon"
               src={Views}
               alt="views icon"
             ></img>
             <span>{views}</span>
           </div>
 
-          <div className="highlight__wrap3">
+          <div className="highlight__wrap-socials">
             <img
-              className="highlight__wrap3 highlight__wrap3--icon"
+              className="highlight__wrap-socials highlight__wrap-socials--icon"
               src={Likes}
               alt="likes icon"
             ></img>

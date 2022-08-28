@@ -3,8 +3,13 @@
 
 .videolist{
     border-top: 1px solid $mercury;
-    margin-left: 2rem;
+    margin-left: 1rem;
+    
 
+    @include tablet{
+        margin-left: 2rem;
+        margin-right: -.5rem;
+    }
     @include desktop{
         border: none;
         border-left: 1px solid $mercury;
@@ -21,7 +26,7 @@
         text-transform: uppercase;
         font-size: .8125rem;
         line-height: 1.125rem;
-        padding: 1rem 0 1rem 2rem;
+        padding: .5rem 0 .5rem 0;
 
         @include desktop{
             padding-left: 0;
@@ -33,6 +38,10 @@
         display: flex;
         margin-left: 1rem;
         margin-right: 1rem;
+        text-decoration: none; 
+        
+
+        
 
         @include tablet{
           padding-right: 20rem;
@@ -40,7 +49,13 @@
         }
         @include desktop{
             padding-right: 10rem;
+            
         }
+    }
+
+    &__container:visited{
+        color: $black;
+    
     }
 
     &__img{
@@ -52,9 +67,28 @@
 
     }
 
+    &__detail{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        
+
+        @include tablet {
+            text-overflow: unset;
+            overflow:unset;
+            white-space: unset;
+            
+        }
+    
+    }
+
     &__detail--bold{
         font-weight: 700;
         padding-bottom: .3rem;
+        margin-top: - 0.2rem;
+        margin-bottom: -1rem;
+        
+     
     }
     
 

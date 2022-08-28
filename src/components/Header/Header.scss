@@ -19,6 +19,8 @@
 
     &__searchContainer {
         display: flex;
+        margin-left: -0.25rem;
+        
 
     }
 
@@ -67,10 +69,10 @@
         background-position: left 10px top 10px;
         border-radius: 4px;
         background-color: $alabaster;
-        width: 75vw;
+        width: 70vw;
         height: 2.25rem;
         padding-left: 2.5rem;
-        margin-right: .5rem;
+        margin-right: 1rem;
 
         @include tablet {
             height: 3rem;

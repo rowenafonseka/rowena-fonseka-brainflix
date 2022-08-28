@@ -3,7 +3,7 @@ import Mohan from "../../assets/Images/Mohan-muruge.jpg";
 
 function Form() {
   return (
-    <div className="form">
+    <form className="form">
       <div>
         <img className="form__avatar" src={Mohan} alt="avatar" />
       </div>
@@ -18,7 +18,7 @@ function Form() {
         </div>
         <button className="form__btn">Comment</button>
       </div>
-    </div>
+    </form>
   );
 }
 
