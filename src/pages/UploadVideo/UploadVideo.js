@@ -8,7 +8,8 @@ function UploadVideo() {
   const [modalState, setModalState] = useState(false);
 
   // function for toggling the modal using state
-  function toggleModal() {
+  function toggleModal(event) {
+    event.preventDefault();
     setModalState(!modalState);
   }
 
@@ -71,7 +72,7 @@ function UploadVideo() {
           </form>
         </div>
       </div>
-      <Modal toggle={modalState} />
+      <Modal toggle={modalState} action={toggleModal} />
     </div>
   );
 }
