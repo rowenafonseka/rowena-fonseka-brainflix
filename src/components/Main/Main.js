@@ -4,8 +4,6 @@ import Highlight from "../../components/Highlight/Highlight";
 import Form from "../../components/Form/Form";
 import Comments from "../../components/Comments/Comments";
 import Videolist from "../../components/Videolist/Videolist";
-// import video from "../../data/video-details.json";
-// import videos from "../..//data/videos.json";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -42,20 +40,7 @@ function Main() {
 
   if (videos.length === 0 || selectedVideo === null) {
     return <p>Loading...</p>;
-    // change this to stop before selected video is avail
   }
-
-  // const changeVideo = (id) => {
-  //   const foundVideo = video.find((video) => {
-  //     if (video.id === id) {
-  //       return true;
-  //     }
-  //   });
-
-  //   setSelectedVideo(foundVideo);
-  // };
-
-  // return <Videolist videos={videos} />;
 
   return (
     <>
@@ -85,7 +70,6 @@ function Main() {
         </div>
         <div className="main__videos">
           <Videolist selectedVideo={selectedVideo} videos={videos} />
-          {/* selectedVideoId={selectedVideo.id} */}
         </div>
       </main>
     </>

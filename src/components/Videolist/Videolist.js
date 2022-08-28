@@ -2,8 +2,6 @@ import "./Videolist.scss";
 import { Link } from "react-router-dom";
 
 function Videolist({ videos, selectedVideo }) {
-  // const videos = props.vids;
-
   const filteredVideos = videos.filter((video) => {
     if (video.id === selectedVideo.id) {
       return false;
@@ -19,9 +17,6 @@ function Videolist({ videos, selectedVideo }) {
       {filteredVideos.map((video) => (
         <Link
           to={`/videos/${video.id}`}
-          // onClick={() => {
-          //   changeVideo(video.id);
-          // }}
           key={video.id}
           className="videolist__container"
         >
