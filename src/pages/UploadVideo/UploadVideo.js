@@ -1,7 +1,17 @@
 import "./UploadVideo.scss";
 import Thumbnail from "../../assets/Images/Upload-video-preview.jpg";
+import Modal from "../../components/Modal/Modal";
+import { useState } from "react";
 
 function UploadVideo() {
+  // usestate for modal
+  const [modalState, setModalState] = useState(false);
+
+  // function for toggling the modal using state
+  function toggleModal() {
+    setModalState(!modalState);
+  }
+
   return (
     <div className="Upload">
       <h1 className="Upload__header">Upload Video</h1>
@@ -44,7 +54,12 @@ function UploadVideo() {
                 placeholder="Add a description to your video"
               ></textarea>
               <div className="Form__buttons">
-                <button className="Form__btn" type="submit" value="submit">
+                <button
+                  onClick={toggleModal}
+                  className="Form__btn"
+                  type="submit"
+                  value="submit"
+                >
                   Publish
                 </button>
 
@@ -56,6 +71,7 @@ function UploadVideo() {
           </form>
         </div>
       </div>
+      <Modal toggle={modalState} />
     </div>
   );
 }
