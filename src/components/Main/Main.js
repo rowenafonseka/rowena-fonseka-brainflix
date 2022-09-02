@@ -8,8 +8,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const apiKey = "?api_key=5a04ffac-5fc2-484b-83fa-d32a0464db90";
-const apiUrl = "https://project-2-api.herokuapp.com/videos";
+const apiUrl = process.env.REACT_APP_API_URL + "/videos";
+console.log(apiUrl);
 
 function Main() {
   const { id } = useParams();
@@ -19,10 +19,10 @@ function Main() {
 
   useEffect(() => {
     axios
-      .get(apiUrl + apiKey)
+      .get(apiUrl)
       .then((response) => {
         setVideos(response.data);
-        console.log(response.data);
+
         let videoId;
 
         if (id) {
@@ -31,7 +31,7 @@ function Main() {
           videoId = response.data[0].id;
         }
 
-        return axios.get(apiUrl + "/" + videoId + apiKey);
+        return axios.get(apiUrl + "/" + videoId);
       })
       .then((response) => {
         setSelectedVideo(response.data);
