@@ -1,23 +1,26 @@
 import "./Modal.scss";
 
-function Modal(props) {
-  const modalState = props.toggle;
-  const action = props.action;
+function Modal({ open, onClose }) {
+  if (!open) return null;
 
   return (
     <>
-      {modalState && (
-        <div className="modal">
-          <div onClick={modalState} className="overlay">
+      <div className="modal">
+        <div onClick={onClose} className="overlay">
+          <div
+            onClick={(event) => {
+              event.stopPropagation();
+            }}
+          >
             <div className="modal__content">
               <h2>Your video has been published!</h2>
-              <button className="modal__close" onClick={action}>
+              <button className="modal__close" onClick={onClose}>
                 Close
               </button>
             </div>
           </div>
         </div>
-      )}
+      </div>
     </>
   );
 }

@@ -56,7 +56,7 @@ function UploadVideo() {
               ></textarea>
               <div className="Form__buttons">
                 <button
-                  onClick={toggleModal}
+                  onClick={(() => modalState(true), toggleModal)}
                   className="Form__btn"
                   type="submit"
                   value="submit"
@@ -72,7 +72,7 @@ function UploadVideo() {
           </form>
         </div>
       </div>
-      <Modal toggle={modalState} action={toggleModal} />
+      <Modal open={modalState} onClose={() => setModalState(false)} />
     </div>
   );
 }
