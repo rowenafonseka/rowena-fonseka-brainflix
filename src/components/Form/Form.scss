@@ -22,6 +22,10 @@
             margin-left: 2rem;
         }
 
+        @include desktop{
+            margin-left: 9rem;
+        }
+
     }
 
     &__field {
@@ -54,6 +58,7 @@
         margin-bottom: 1rem;
         border: 1px solid $mercury;
         resize: none;
+        
 
         @include tablet {
             height: 3rem;
@@ -63,6 +68,7 @@
         @include desktop{
             width: 35vw;
             margin-left: 1rem;
+        
             
         }
     }
@@ -72,10 +78,10 @@
         color: $black;
     }
 
-    &__btn {
+    &__button {
         height: 2.55rem;
         width: 90%;
-        background-color: $blue;
+        background-color: $button-color;
         background-image: url(../../assets/Icons/add_comment.svg);
         background-repeat: no-repeat;
         background-position: left 10px top 10px;
@@ -87,8 +93,7 @@
         border: 0;
         margin-bottom: 2rem;
         
-       
-
+        
         @include tablet {
             width: 30vw;
             height: 3rem;
@@ -100,6 +105,7 @@
         @include desktop{
             width: 15vw;
             margin-right: 1.5rem;
+        
         }
 
     }
@@ -110,7 +116,7 @@
     }
 
     &__btn:hover{
-        background-color: $darkBlue;
+        background-color: $button-hover;
     }
 
 }

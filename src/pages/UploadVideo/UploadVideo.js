@@ -4,6 +4,7 @@ import Modal from "../../components/Modal/Modal";
 import { useState } from "react";
 import Image from "../../assets/Images/Upload-video-preview.jpg";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function UploadVideo() {
   // usestate for modal
@@ -33,54 +34,55 @@ function UploadVideo() {
   }
 
   return (
-    <div className="Upload">
-      <h1 className="Upload__header">Upload Video</h1>
+    <div className="upload">
+      <h1 className="upload__header">Upload Video</h1>
 
-      <div className="Upload__wrapper">
-        <div className="Upload__thumb">
-          <h2 className="Upload__thumbTitle">Video Thumbnail</h2>
+      <div className="upload__wrapper">
+        <div className="upload__thumb">
+          <h2 className="upload__thumb-title">Video Thumbnail</h2>
           <img
-            className="Upload__thumbnail"
+            className="upload__thumbnail"
             src={Thumbnail}
             alt="Video Preview"
           />
         </div>
-        <div className="Form">
+        <div className="form">
           <form onSubmit={(() => modalState(true), handleSubmit)}>
-            <div className="Form__title">
+            <div className="form__title">
               <label
-                className="Form__title Form__title--grey"
+                className="form__title form__title--light"
                 htmlFor="title-input"
               >
                 Title Your Video
               </label>
               <input
-                className="Form__title Form__title--input"
+                className="form__title form__title--input"
                 type="text"
                 name="titleField"
                 placeholder="Add a title to your video"
               />
             </div>
-            <div className="Form__description">
+            <div className="form__description">
               <label
-                className="Form__description Form__description--grey"
+                className="form__description form__description--light"
                 htmlFor="description-input"
               >
                 Add a Video Description
               </label>
               <textarea
-                className="Form__description Form__description--input"
+                className="form__description form__description--input"
                 name="descriptionField"
                 placeholder="Add a description to your video"
               ></textarea>
-              <div className="Form__buttons">
-                <button className="Form__btn" type="submit" value="submit">
+              <div className="form__buttons">
+                <button className="form__btn" type="submit" value="submit">
                   Publish
                 </button>
-
-                <a className="Form__cancel" href="/">
-                  cancel
-                </a>
+                <Link to={"/"}>
+                  <button className="form__cancel" type="button">
+                    Cancel
+                  </button>
+                </Link>
               </div>
             </div>
             {isSuccess}

@@ -1,13 +1,14 @@
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/breakpoints" as *;
 
-.Upload{
+.upload{
 
     border-top: 1px solid $mercury;
 
     &__wrapper{
         @include desktop{
             display: flex;
+            margin-top: -2.5rem;
         }
     }
 
@@ -34,7 +35,7 @@
 
     }
 
-    &__thumbTitle {
+    &__thumb-title {
         font-size: .75rem;
         line-height: 20px;
         font-weight: 700;
@@ -58,7 +59,8 @@
 
     &__thumbnail{
         width: 100vw;
-        height: 11rem;
+        max-width: 100%;
+        height: auto;
         border-radius: 4px;
         padding: 0 1rem 1rem 1rem;
 
@@ -80,17 +82,19 @@
    
     }
 
-    .Form{
+    .form{
 
         @include desktop{
             padding-top: 3.1rem;
+            margin-left: -7rem;
+         
         }
 
         &__title{
             display: flex;
             flex-direction: column;
 
-            &--grey{
+            &--light{
                 color: $mercury;
                 padding: 0 0 .25rem 1rem;
                 font-size: .75rem;
@@ -137,7 +141,7 @@
             display: flex;
             flex-direction: column;
 
-            &--grey{
+            &--light{
                 color: $mercury;
                 padding: 1rem 0 .25rem 1rem;
                 font-size: .75rem;
@@ -159,6 +163,7 @@
                 border: 1px solid $mercury;
                 border-radius: 4px;
                 background-color: $alabaster;
+                resize: none;
 
                 @include tablet{
                     margin-left: 1.5rem;
@@ -185,19 +190,20 @@
                 padding-top: 2rem;
                 border-top: 1px solid $mercury;
                 margin-left: 1.5rem;
-                margin-right: 1.5rem;
+                margin-right: -1.5rem;
+                padding-right: 3rem;
                 
             }
 
             @include desktop{
-                margin-left: -23.5rem;
-                
-
+                padding-top: .5rem;
+                margin-bottom: 15rem;
+           
             }
         }
 
         &__btn {
-            background-color: $blue;
+            background-color: $button-color;
             height: 3rem;
             width: 90vw;
             border-radius: 4px;
@@ -209,7 +215,7 @@
             text-transform: uppercase;
             font-size: 1rem;
             line-height: 1.25rem;
-            font-weight: 700;
+            font-weight: 400;
             text-align: center;
             background-image: url(../../assets/Icons/publish.svg);
             background-repeat: no-repeat;
@@ -217,34 +223,45 @@
 
             @include tablet{
                 width: 30vw;
+               
+               
             }
 
             @include desktop{
                 width: 12vw;
                 font-weight: 400;
+                margin-right: 0rem;
+                margin-top: 1.5rem;
             }
      }
 
      &__btn:hover {
-        background-color: $darkBlue;
+        background-color: $button-hover;
     }
 
 
         &__cancel{
             text-transform: uppercase;
             text-decoration: none;
-            color: $blue;
-            font-weight: 700;
+            color: $button-color;
+            font-weight: 400;
+            font-size: 1rem;    
             padding-bottom: 3rem;
             padding-left: 8rem;
+            background-color: $white;
+            border: none;
 
             @include tablet{
                 padding-right: 3rem;
-                padding-top: .75rem;
+                padding-top: 1rem;
+                padding-left: 23.5rem;
             }
 
             @include desktop{
                 font-weight: 400;
+                padding-top: 2.5rem;
+            
+
             }
         }
 

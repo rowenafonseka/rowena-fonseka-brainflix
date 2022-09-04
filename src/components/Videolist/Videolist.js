@@ -1,8 +1,12 @@
 import "./Videolist.scss";
 import { Link } from "react-router-dom";
-// import axios from "axios";
+import { useEffect } from "react";
 
 function Videolist({ videos, selectedVideo }) {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
+
   const filteredVideos = videos.filter((video) => {
     if (video.id === selectedVideo.id) {
       return false;
@@ -19,6 +23,9 @@ function Videolist({ videos, selectedVideo }) {
         <Link
           to={`/videos/${video.id}`}
           key={video.id}
+          onClick={() => {
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+          }}
           className="videolist__container"
         >
           <div>

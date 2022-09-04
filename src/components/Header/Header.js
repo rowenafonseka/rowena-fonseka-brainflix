@@ -13,7 +13,7 @@ function Header() {
             alt="brainflix-logo"
           />
         </a>
-        <div className="header__searchContainer">
+        <div className="header__search-container">
           <input
             className="header__search"
             type="search"

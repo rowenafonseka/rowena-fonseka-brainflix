@@ -16,7 +16,7 @@ function Form() {
             placeholder="Add a new comment"
           ></textarea>
         </div>
-        <button className="form__btn">Comment</button>
+        <button className="form__button">Comment</button>
       </div>
     </form>
   );

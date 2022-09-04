@@ -1,9 +1,9 @@
-import "./Main.scss";
-import Hero from "../../components/Hero/Hero";
-import Highlight from "../../components/Highlight/Highlight";
-import Form from "../../components/Form/Form";
-import Comments from "../../components/Comments/Comments";
-import Videolist from "../../components/Videolist/Videolist";
+import "./Homepage.scss";
+import Hero from "../Hero/Hero";
+import Highlight from "../Highlight/Highlight";
+import Form from "../Form/Form";
+import Comments from "../Comments/Comments";
+import Videolist from "../Videolist/Videolist";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -11,7 +11,7 @@ import axios from "axios";
 const apiUrl = process.env.REACT_APP_API_URL + "/videos";
 console.log(apiUrl);
 
-function Main() {
+function Homepage() {
   const { id } = useParams();
 
   const [videos, setVideos] = useState([]);
@@ -35,6 +35,10 @@ function Main() {
       })
       .then((response) => {
         setSelectedVideo(response.data);
+      })
+
+      .catch((error) => {
+        alert(error.message);
       });
   }, [id]);
 
@@ -76,4 +80,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Homepage;
