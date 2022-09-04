@@ -14,9 +14,11 @@ function Modal({ open, onClose }) {
           >
             <div className="modal__content">
               <h2>Your video has been published!</h2>
-              <button className="modal__close" onClick={onClose}>
-                Close
-              </button>
+              <a href="/">
+                <button className="modal__close" onClick={onClose}>
+                  Close
+                </button>
+              </a>
             </div>
           </div>
         </div>

@@ -2,15 +2,34 @@ import "./UploadVideo.scss";
 import Thumbnail from "../../assets/Images/Upload-video-preview.jpg";
 import Modal from "../../components/Modal/Modal";
 import { useState } from "react";
+import Image from "../../assets/Images/Upload-video-preview.jpg";
+import axios from "axios";
 
 function UploadVideo() {
   // usestate for modal
   const [modalState, setModalState] = useState(false);
 
-  // function for toggling the modal using state
-  function toggleModal(event) {
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  function handleSubmit(event) {
     event.preventDefault();
     setModalState(!modalState);
+
+    axios
+      .post(process.env.REACT_APP_API_URL + "/videos", {
+        title: event.target.title.value,
+        description: event.target.description.value,
+        Image: Image,
+      })
+
+      .then(() => {
+        setIsSuccess(true);
+        setErrorMessage("");
+      })
+      .catch((error) => {
+        setErrorMessage(error.response.data);
+      });
   }
 
   return (
@@ -27,7 +46,7 @@ function UploadVideo() {
           />
         </div>
         <div className="Form">
-          <form>
+          <form onSubmit={(() => modalState(true), handleSubmit)}>
             <div className="Form__title">
               <label
                 className="Form__title Form__title--grey"
@@ -55,12 +74,7 @@ function UploadVideo() {
                 placeholder="Add a description to your video"
               ></textarea>
               <div className="Form__buttons">
-                <button
-                  onClick={(() => modalState(true), toggleModal)}
-                  className="Form__btn"
-                  type="submit"
-                  value="submit"
-                >
+                <button className="Form__btn" type="submit" value="submit">
                   Publish
                 </button>
 
@@ -69,6 +83,8 @@ function UploadVideo() {
                 </a>
               </div>
             </div>
+            {isSuccess}
+            {errorMessage}
           </form>
         </div>
       </div>
